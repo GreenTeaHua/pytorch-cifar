@@ -15,7 +15,7 @@ import argparse
 
 from models import *
 from utils import progress_bar
-
+from models.vgg import VGG
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
@@ -137,6 +137,11 @@ def test(epoch):
         best_acc = acc
 
 
-for epoch in range(start_epoch, start_epoch+200):
-    train(epoch)
-    test(epoch)
+#for epoch in range(start_epoch, start_epoch+200):
+#    train(epoch)
+#    test(epoch)
+# For win10
+if __name__ == '__main__':
+    for epoch in range(start_epoch, start_epoch+200):
+        train(epoch)
+        test(epoch)
