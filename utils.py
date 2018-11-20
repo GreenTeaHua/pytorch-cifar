@@ -41,8 +41,10 @@ def init_params(net):
             if m.bias:
                 init.constant(m.bias, 0)
 
-
-_, term_width = os.popen('stty size', 'r').read().split()
+# python 2
+#_, term_width = os.popen('stty size', 'r').read().split()
+# python 3
+term_width = os.get_terminal_size().columns
 term_width = int(term_width)
 
 TOTAL_BAR_LENGTH = 65.
